@@ -185,7 +185,7 @@
                                     </div>
                                 </div>
 
-                                <div style="width:100%" *ngIf="dataObs | async; else loading">
+                                <div style="width:100%" *ngIf="dataObs | async;">
 
                                     <app-pie-chart [data]="dataPieChart"></app-pie-chart>
                                 </div>
@@ -199,7 +199,7 @@
                             <mat-card-content>
                                 <mat-card-title>Internações x Dia</mat-card-title>
                                 <div style="margin-top:20px; width:100%; display: inline-block; vertical-align:top;"
-                                    *ngIf="dataObs | async; else loading">
+                                    *ngIf="dataObs | async;">
                                     <app-dashboard-timeline-chart showYearRangeFilter="false"
                                         [data]="timelineDashboardData">
                                     </app-dashboard-timeline-chart>
