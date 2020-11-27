@@ -4,7 +4,6 @@ import { HeatmapComponent } from './charts/heatmap/heatmap.component';
 import { FullComponent } from './layouts/full/full.component';
 import { ArrowListCidPageComponent } from './sih/arrow-list-cid-page/arrow-list-cid-page.component';
 import { CidMenPieChartComponent } from './sih/cid-men-pie-chart/cid-men-pie-chart.component';
-import { CidScatterplotComponent } from './sih/cid-scatterplot/cid-scatterplot.component';
 import { CidWomenPieChartComponent } from './sih/cid-women-pie-chart/cid-women-pie-chart.component';
 import { GenderAgePyramidComponent } from './sih/gender-age-pyramid-page/gender-age-pyramid-page.component';
 import { HeatmapStateCidComponent } from './sih/heatmap-state-cid/heatmap-state-cid.component';

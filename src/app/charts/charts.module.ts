@@ -14,7 +14,6 @@ import { HeatmapComponent } from './heatmap/heatmap.component';
 import { PyramidMultiDataComponent } from './pyramid-multi-data/pyramid-multi-data.component';
 import { MapComponent } from './map/map.component';
 import { MultipleCoordinatedViewComponent } from './multiple-coordinated-view/multiple-coordinated-view.component';
-import { CidScatterplotComponent } from '../sih/cid-scatterplot/cid-scatterplot.component';
 import { MultiBarChartComponent } from './multi-bar-chart/multi-bar-chart.component';
 
 @NgModule({
