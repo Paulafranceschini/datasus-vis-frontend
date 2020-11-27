@@ -1,0 +1,10 @@
+<div *ngIf="cidObs | async;" style="max-width: 400px; max-height:400px;">
+    <form [formGroup]="cidForm">
+        <mat-label>Selecione o CID</mat-label>
+        <mat-select formControlName="cid" (selectionChange)="onCidChange()">
+            <mat-option *ngFor="let cid of cidList" [value]="cid">
+                {{cid.descricao}}
+            </mat-option>
+        </mat-select>
+    </form>
+</div>

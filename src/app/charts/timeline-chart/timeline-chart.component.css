@@ -1,0 +1,12 @@
+.focus text {
+    font-size: 14px;
+}
+
+.tooltipTimeline {
+    background-color: white;
+    border: 1px solid #000;
+}
+
+.tooltip-date, .tooltip-likes {
+    font-weight: bold;
+}

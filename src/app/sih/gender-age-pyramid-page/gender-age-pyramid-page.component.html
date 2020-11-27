@@ -1,0 +1,34 @@
+<div style="width:80%; display: inline-block">
+
+    <mat-card>
+        <mat-card-header>
+
+            <mat-card-title>Pirâmide de Gênero e Idade</mat-card-title>
+
+            <mat-card-subtitle>
+                <div style="width:80%; vertical-align:top; display: inline-block; ">
+                    <p>As pirâmides populacionais possuem dois histogramas justapostos verticalmente, um para pessoas do sexo
+                        masculino e outro para pessoas do sexo feminino, com um eixo vertical comum para idade, que
+                        geralmente é representada por um ano único ou categorias de intervalos de 5 anos. Quanto maior a
+                        barra do eixo vertical, maior a proporção de indivíduos daquela idade que foram internados por determinada doença.</p>
+                    <br/><br/>
+                    {{subtitle}}
+                </div>
+            </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <div style="width:100%" *ngIf="dataObs | async; else loading">
+                <div style="margin-top:20px; width:500px; height:500px; margin-left:30%; display: inline-block; vertical-align:top; ">
+                    <app-pyramid-chart [data]="data"></app-pyramid-chart>
+                </div>
+            </div>
+            <ng-template #loading>
+                <div>...</div>
+            </ng-template>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div style="width:20%; display: inline-block; vertical-align:top">
+    <app-filters (filter)="onFilter($event)" showCheckboxTable="false" showRadioTable="true"></app-filters>
+</div>

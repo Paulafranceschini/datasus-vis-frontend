@@ -1,0 +1,10 @@
+<table class="table table-striped" style="font-size:10px;">
+    <tbody>
+        <tr *ngFor="let col of cidList; index as i">
+            <td [ngStyle]="getStyle(col)"> </td>
+            <td  style="padding:0em"> 
+                [ {{ col.cod }} ] -
+                {{ col.descricao }}</td>
+        </tr>
+    </tbody>
+</table>

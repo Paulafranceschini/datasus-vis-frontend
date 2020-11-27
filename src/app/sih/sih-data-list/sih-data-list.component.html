@@ -1,0 +1,24 @@
+
+
+    <table class="table table-striped" style="width:95%">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Coluna</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Tipo de Atributo</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let col of data; index as i">
+          <th scope="row">
+            {{i + 1}}
+          <td>
+            <button mat-button color="link" (click)="openDialog()">{{ col.nome }}</button>
+          </td>
+          <td>{{ col.descricao }}</td>
+          <td>{{ col.tipo_atributo_id }}</td>
+        </tr>
+      </tbody>
+    </table>

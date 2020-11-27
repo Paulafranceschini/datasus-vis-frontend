@@ -1,0 +1,32 @@
+.position-relative {
+	position: relative;
+}
+
+.add-contact {
+	position: absolute;
+    right: 17px;
+    top: 57px;
+}
+
+.col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-sm-6{flex:0 0 50%;max-width:50%}
+
+
+.col-5 {    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}

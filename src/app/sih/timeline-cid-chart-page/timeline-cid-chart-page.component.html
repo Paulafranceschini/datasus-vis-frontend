@@ -1,0 +1,32 @@
+<div style="width:80%; display: inline-block">
+
+<mat-card>
+    <mat-card-header>
+
+        <mat-card-title>Linha do Tempo</mat-card-title>
+ 
+        <mat-card-subtitle>
+            Este gráfico mostra o número de novas internações por grupo CID ao longo do ano.
+            <br />
+            Para identificar o CID foi utilizado o campo 'DIAG_PRINC', que indica o diagnóstico principal.
+            O eixo X mostra a data de internação, enquanto o eixo Y mostra o número de internações ocorridas
+            naquela
+            data.
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <div style="width:100%" *ngIf="dataObs | async; else loading">
+            <div style="margin-top:20px; width:80%; display: inline-block; vertical-align:top;">
+                <app-timeline-chart [data]="data"></app-timeline-chart>
+            </div>
+        </div>
+        <ng-template #loading>
+            <div>Carregando...</div>
+        </ng-template>
+    </mat-card-content>
+</mat-card>
+</div>
+<div style="width:20%; display: inline-block">
+    <app-filters (filter)="onFilter($event)" showCheckboxTable="true" showRadioTable="false"></app-filters>
+</div>

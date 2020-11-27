@@ -1,0 +1,31 @@
+<div style="width:80%; display: inline-block">
+
+    <mat-card style="vertical-align:top;">
+        <mat-card-header>
+
+            <mat-card-title>CID x Gênero</mat-card-title>
+
+            <mat-card-subtitle>
+                <p>
+                Gráfico que mostra a quantidade de internações para cada CID e Gênero, permitindo comparar se um determinado grupo de CID teve incidência maior entre mulheres ou homens, no período e local escolhidos.
+            </p>
+            <br/>
+            {{subtitle}}
+            </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <div style="width:100%" *ngIf="dataObs | async; else loading">
+                <div style="margin-top:20px; width:90%; display: inline-block; ">
+                    <app-multi-bar-chart [data]=data></app-multi-bar-chart>
+                </div>
+            </div>
+            <ng-template #loading>
+                <div>Carregando...</div>
+            </ng-template>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div style="width:20%; display: inline-block; vertical-align:top;">
+    <app-filters (filter)="onFilter($event)" showCheckboxTable="true" showRadioTable="false"></app-filters>
+</div>

@@ -1,0 +1,7 @@
+<div *ngIf="dataObs | async; else loading" style="max-width: 400px; max-height:400px;">    
+    <app-pie-chart [data]="data" id="wm_pie_data"></app-pie-chart>
+</div>
+
+<ng-template #loading>
+    <div>Carregando...</div>
+</ng-template>

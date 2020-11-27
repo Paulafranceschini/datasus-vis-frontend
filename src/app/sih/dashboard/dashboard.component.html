@@ -1,0 +1,226 @@
+<div fxLayout="row" fxLayoutGap="10">
+    <div fxFlex="85%">
+        <mat-card>
+            <mat-card-header>
+
+                <mat-card-title>Dashboard -  Dados do Sistema de Internações Hospitalares/SUS </mat-card-title>
+
+                <mat-card-subtitle>
+                    Referentes a: 
+                    <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+                        <div fxLayout="row">
+                            <div style="width: 40%; margin:1px">
+                                <mat-form-field appearance="fill">
+                                    <mat-label style="font-size: 11px">UF</mat-label>
+                                    <mat-select formControlName="uf">
+                                        <mat-option *ngFor="let uf of ufList" [value]="uf" style="font-size: 10px">
+                                            {{uf.sigla}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+
+                            <div style="width: 40%; margin:1px">
+                                <mat-form-field  appearance="fill">
+                                    <mat-label style="font-size: 11px">Ano</mat-label>
+                                    <mat-select formControlName="year">
+                                        <mat-option *ngFor="let year of yearList" [value]="year"
+                                            style="font-size: 10px">
+                                            {{year}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div style="width:20%; margin:1px; margin-top:5px">
+                                <button mat-mini-fab color="primary" type="submit">
+                                    <mat-icon>refresh</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </mat-card-subtitle>
+            </mat-card-header>
+
+
+            <mat-card-content style="padding-top:0px">
+                <div fxLayout="row wrap">
+                    <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="100" fxFlex="100">
+                        <mat-card style="height: 100px">
+                            <mat-card-content>
+                                <div fxLayout="row" fxLayoutGap="10">
+                                    <div fxFlex="50%" style="vertical-align: center;">
+                                        <fa-icon [icon]="faHospital" size="3x" style="color:#999"></fa-icon>
+
+                                    </div>
+                                    <div fxFlex="50%">
+                                        <mat-card-title>
+                                            Internações
+                                        </mat-card-title>
+                                        <p>{{totalRegistros | number}}</p>
+
+                                    </div>
+                                </div>
+
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="100" fxFlex="100">
+                        <mat-card style="height: 100px">
+                            <mat-card-content>
+                                <div fxLayout="row" fxLayoutGap="10">
+                                    <div fxFlex="50%" style="vertical-align: center;">
+                                        <fa-icon [icon]="faAmbulance" size="3x" style="color:#999"></fa-icon>
+
+                                    </div>
+                                    <div fxFlex="50%">
+                                        <mat-card-title>
+                                            Média/Dia
+                                        </mat-card-title>
+                                        <p>{{mediaDia | number}}</p>
+
+                                    </div>
+                                </div>
+
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="100" fxFlex="100">
+                        <mat-card style="height: 100px">
+                            <mat-card-content>
+                                <div fxLayout="row" fxLayoutGap="10">
+                                    <div fxFlex="50%" style="vertical-align: center;">
+                                        <fa-icon [icon]="faFileMedical" size="3x" style="color:#999"></fa-icon>
+
+                                    </div>
+                                    <div fxFlex="50%">
+                                        <mat-card-title>
+                                            Altas
+                                        </mat-card-title>
+                                        <p>{{totalAltas | number}}</p>
+
+                                    </div>
+                                </div>
+
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div fxFlex.gt-lg="25" fxFlex.gt-md="25" fxFlex.gt-xs="100" fxFlex="100">
+                        <mat-card style="height: 100px">
+                            <mat-card-content>
+                                <div fxLayout="row" fxLayoutGap="10">
+                                    <div fxFlex="50%" style="vertical-align: center;">
+                                        <fa-icon [icon]="faCross" size="3x" style="color:#999"></fa-icon>
+
+                                    </div>
+                                    <div fxFlex="50%">
+                                        <mat-card-title>
+                                            Mortes
+                                        </mat-card-title>
+                                        <p>{{totalMortes | number}}</p>
+
+                                    </div>
+                                </div>
+
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+                <!--div fxLayout="row wrap">
+                    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="100" fxFlex="100">
+                        <mat-card style="height: 100px">
+                            <mat-card-content>
+                                <div fxLayout="row" fxLayoutGap="10">
+                                    <div fxFlex="20%" style="vertical-align: center;">
+                                        <fa-icon [icon]="faLevelUp" size="3x" style="color:#999"></fa-icon>
+
+                                    </div>
+                                    <div fxFlex="80%">
+                                        <mat-card-title>
+                                            CID mais internações                                        
+                                        </mat-card-title>
+                                        
+                                        <p style="font-size: 11px;">
+                                            {{cidMaisInter}} <br/>
+                                            {{totalMaisInter | number}}</p>
+
+                                    </div>
+                                </div>
+
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <div fxFlex.gt-lg="50" fxFlex.gt-md="50" fxFlex.gt-xs="100" fxFlex="100">
+                        <mat-card style="height: 100px">
+                            <mat-card-content>
+                                <div fxLayout="row" fxLayoutGap="10">
+                                    <div fxFlex="20%" style="vertical-align: center;">
+                                        <fa-icon [icon]="faLevelDown" size="3x" style="color:#999"></fa-icon>
+
+                                    </div>
+                                    <div fxFlex="80%">
+                                        <mat-card-title>
+                                            CID menos internações
+                                        </mat-card-title>
+                                        <p style="font-size: 11px;">
+                                            {{cidMenosInter}} <br/>
+                                            {{totalMenosInter | number}}</p>
+
+
+                                    </div>
+                                </div>
+
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+
+                </div-->
+                <div fxLayout="row wrap">
+                    <!-- column -->
+                    <div fxFlex.gt-lg="33" fxFlex.gt-md="33" fxFlex.gt-xs="100" fxFlex="100">
+                        <mat-card style="height:520px">
+                            <mat-card-content>
+                                <div class="d-flex flex-wrap">
+                                    <div>
+                                        <mat-card-title>Internações x Gênero</mat-card-title>
+                                    </div>
+                                </div>
+
+                                <div style="width:100%" *ngIf="dataObs | async; else loading">
+
+                                    <app-pie-chart [data]="dataPieChart"></app-pie-chart>
+                                </div>
+
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                    <!-- column -->
+                    <div fxFlex.gt-lg="66" fxFlex.gt-md="66" fxFlex.gt-xs="100" fxFlex="100">
+                        <mat-card style="height:520px">
+                            <mat-card-content>
+                                <mat-card-title>Internações x Dia</mat-card-title>
+                                <div style="margin-top:20px; width:100%; display: inline-block; vertical-align:top;"
+                                    *ngIf="dataObs | async; else loading">
+                                    <app-dashboard-timeline-chart showYearRangeFilter="false"
+                                        [data]="timelineDashboardData">
+                                    </app-dashboard-timeline-chart>
+                                </div>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+
+                    <!-- ============================================================== -->
+                    <!-- Image Card row-->
+                    <!-- ============================================================== -->
+                    <div fxLayout="row wrap">
+                        <!-- Card column -->
+                        <div fxFlex.gt-lg="100" fxFlex.gt-md="100" fxFlex.gt-xs="100" fxFlex="100">
+                            <mat-card>
+                            </mat-card>
+                        </div>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+</div>

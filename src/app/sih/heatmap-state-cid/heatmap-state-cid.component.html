@@ -1,0 +1,29 @@
+<div style="width:80%; display: inline-block; vertical-align:top">
+
+    <mat-card>
+        <mat-card-header>
+
+            <mat-card-title>Ocorrência por UF</mat-card-title>
+
+            <mat-card-subtitle>
+                Mapa de calor, indica o grau de incidência de cada grupo cid em cada estado brasileiro.
+                <br/><br/>
+                        Referente a:  {{year}}
+            </mat-card-subtitle>
+        </mat-card-header>
+
+        <mat-card-content>
+            <div style="width:100%" *ngIf="dataObs | async; else loading">
+                <div style="margin-top:20px; width:80%; display: inline-block; vertical-align:top;">
+                    <app-heatmap [data]="data"></app-heatmap>
+                </div>
+            </div>
+            <ng-template #loading>
+                <div>Carregando...</div>
+            </ng-template>
+        </mat-card-content>
+    </mat-card>
+</div>
+<div style="width:20%; display: inline-block">
+    <app-filters (filter)="onFilter($event)" showCheckboxInput="false" showUfFilter="false" ></app-filters>
+</div>
