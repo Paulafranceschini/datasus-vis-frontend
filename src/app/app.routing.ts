@@ -53,7 +53,6 @@ export const AppRoutes: Routes = [
       { path: 'heatmap_cid_uf', component: HeatmapStateCidComponent },
       { path: 'map_cid_vis', component: MapCidVisComponent },
       { path: 'timeline_cid_chart', component: TimelineCidChartPageComponent },
-      { path: 'cid_scatterplot', component: CidScatterplotComponent},
       { path: 'mcv_incidence', component: McvCidComponent},
       { path: 'about_sih', component:AboutSihComponent }
 

@@ -33,8 +33,7 @@ import { MultiBarChartComponent } from './multi-bar-chart/multi-bar-chart.compon
     PyramidMultiDataComponent, 
     MapComponent, 
     MultipleCoordinatedViewComponent, 
-    DashboardTimelineChartComponent, 
-    CidScatterplotComponent, 
+    DashboardTimelineChartComponent,  
     MultiBarChartComponent, 
   ],
   exports:[
