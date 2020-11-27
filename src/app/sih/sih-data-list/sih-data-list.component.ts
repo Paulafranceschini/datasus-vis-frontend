@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 import { RestService } from '../../services/rest.service';
-import { AttributeDialogComponent } from './attribute-dialog/attribute-dialog.component';
 @Component({
   selector: 'app-sih-data-list',
   templateUrl: './sih-data-list.component.html',
@@ -57,15 +56,7 @@ export class SihDataListComponent implements OnInit {
     console.log(this.form.value);
   }
 
-  openDialog() {
 
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(AttributeDialogComponent, dialogConfig);
-  }
 
 
 }

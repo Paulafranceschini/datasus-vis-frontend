@@ -11,7 +11,6 @@ import { ChipsComponent } from './chips/chips.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ProgressSnipperComponent } from './progress-snipper/progress-snipper.component';
 import { ProgressComponent } from './progress/progress.component';
-import { DialogComponent } from './dialog/dialog.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { SnackbarComponent } from './snackbar/snackbar.component';
 import { SliderComponent } from './slider/slider.component';
@@ -62,10 +61,6 @@ export const MaterialRoutes: Routes = [
   {
     path: 'progress',
     component: ProgressComponent
-  },
-  {
-    path: 'dialog',
-    component: DialogComponent
   },
   {
     path: 'tooltip',

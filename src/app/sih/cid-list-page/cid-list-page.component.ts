@@ -3,7 +3,6 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 import { CidBgColor } from 'app/enum/cid_bg_color';
 import { CidFontColor } from 'app/enum/cid_font_color';
 import { RestService } from 'app/services/rest.service';
-import { AttributeDialogComponent } from '../sih-data-list/attribute-dialog/attribute-dialog.component';
 
 @Component({
   selector: 'app-cid-list-page',
@@ -36,15 +35,6 @@ export class CidListPageComponent implements OnInit {
         }
       )
 
-  }
-  openDialog() {
-
-    const dialogConfig = new MatDialogConfig();
-
-    dialogConfig.disableClose = true;
-    dialogConfig.autoFocus = true;
-
-    this.dialog.open(AttributeDialogComponent, dialogConfig);
   }
 
   getStyle(col){
