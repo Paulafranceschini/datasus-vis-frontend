@@ -19,8 +19,9 @@ export class RestService implements OnInit {
   }
 
   //url : string = "https://tcc-datasus-289918.ue.r.appspot.com/"
-  url: string = "http://localhost:8080/"
+  //url: string = "http://localhost:8080/"
   //url: string = "http://35.233.188.241:8080/"
+  url: string = "https://datasus-vis-backend.herokuapp.com/"
 
   async getCidWomenPieChartDataAsync() {
     const params = new HttpParams()
